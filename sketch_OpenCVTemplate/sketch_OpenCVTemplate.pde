@@ -40,7 +40,12 @@ void initCamera()
   if (cameras.length != 0) 
   {
     println("Using camera: " + cameras[0]); 
+    
+    // If you receive the error "BaseSrc: [avfvideosrc0] : Internal data stream error"
+    // then comment out the line below and uncomment the one below that.
     cam = new Capture(this, cameras[0]);
+    //cam = new Capture(this, 640, 480, "pipeline:avfvideosrc device-index=0", 30);  
+    
     cam.start();    
     
     while(!cam.available()) print();
