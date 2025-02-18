@@ -35,9 +35,9 @@ The example uses a Cascade classifier to track the positions of faces in an imag
 
 In the example, you should see that a ```loadCascade``` method call initializes the face detector. The ```OpenCV.CASCADE_FRONTALFACE``` parameter currently specifies that the detector should look for features representing a whole face. However, it can be configured to look for individual facial features too by changing this parameter (see the [documentation](http://atduskgreg.github.io/opencv-processing/reference/gab/opencv/OpenCV.html#loadCascade(java.lang.String)) for how). Add the code for initializing the tracker into the template sketch, and change the parameter so that it looks for noses rather than faces.
 
-Once the detector has been initialized in the setup method, the detect method is used to detect the position of all faces (or noses) in the camera image. The example only calls the detect method once, because it’s working on a still image. Add the detect method to the draw loop of the template sketch, so that it runs for every video frame (note that the template already uses the loadImage to load the latest video frame into the OpenCV object).
+Once the detector has been initialized in the setup method, the ```detect``` method is used to detect the position of all faces (or noses) in the camera image. The example only calls the detect method once, because it’s working on a still image. Add the ```detect``` method to the draw loop of the template sketch, so that it runs for every video frame (note that the template already uses the ```loadImage``` to load the latest video frame into the OpenCV object).
 
-The detect method returns an array of Rectangle objects that specify the position and size of all objects detected. These objects are then used to draw some green rectangles showing the position and size of these objects. Complete the task by adapting this code to draw a red “Comic Relief” nose on the detected nose positions instead.
+The ```detect``` method returns an array of ```Rectangle``` objects that specify the position and size of all objects detected. These objects are then used to draw some green rectangles showing the position and size of these objects. Complete the task by adapting this code to draw a red “Comic Relief” nose on the detected nose positions instead.
 
 ## Task 2: More Accurate Nose Tracking with a Region of Interest
 
